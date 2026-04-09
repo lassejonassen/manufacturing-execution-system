@@ -18,6 +18,10 @@ public static class WebApplicationExtensions
 
         app.MapControllers();
 
+        if (app.Environment.IsDevelopment())
+        {
+            app.MigrateDatabases();
+        }
 
         return app;
     }

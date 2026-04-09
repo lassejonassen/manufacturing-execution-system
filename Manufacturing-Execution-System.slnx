@@ -5,6 +5,7 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/SharedKernel/SharedKernel.csproj" />
+    <Project Path="src/WebAPI.Contracts/WebAPI.Contracts.csproj" />
     <Project Path="src/WebAPI/WebAPI.csproj" />
   </Folder>
   <Folder Name="/src/modules/" />

@@ -1,14 +1,12 @@
-﻿using LineManagement.Domain.ProductionLines.Errors;
+﻿using LineManagement.Application.ProductionLines.DTOs;
+using LineManagement.Domain.ProductionLines.Errors;
 using LineManagement.Domain.ProductionLines.Repositories;
 using SharedKernel;
 using SharedKernel.Messaging;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LineManagement.Application.ProductionLines.Commands;
 
-public sealed record UpdateProductionLineCommand(Guid Id, string Name, string Description) : IRequest<Result>;
+public sealed record UpdateProductionLineCommand(UpdateProductionLineDTO Dto) : IRequest<Result>;
 
 public sealed class UpdateProductionLineCommandHandler(
     IProductionLineRepository productionLineRepository,
@@ -17,16 +15,16 @@ public sealed class UpdateProductionLineCommandHandler(
 {
     public async Task<Result> Handle(UpdateProductionLineCommand request, CancellationToken cancellationToken)
     {
-        var productionLine = await productionLineRepository.GetByIdAsync(request.Id, cancellationToken);
+        var productionLine = await productionLineRepository.GetByIdAsync(request.Dto.Id, cancellationToken);
 
         if (productionLine is null)
         {
             return Result.Failure(ProductionLineErrors.NotFound);
         }
 
-        if (productionLine.Name != request.Name)
+        if (productionLine.Name != request.Dto.Name)
         {
-            var existingProductionLine = await productionLineRepository.GetByNameAsync(request.Name, cancellationToken);
+            var existingProductionLine = await productionLineRepository.GetByNameAsync(request.Dto.Name, cancellationToken);
 
             if (existingProductionLine is not null)
             {
@@ -34,7 +32,7 @@ public sealed class UpdateProductionLineCommandHandler(
             }
         }
 
-        productionLine.Update(request.Name, request.Description);
+        productionLine.Update(request.Dto.Name, request.Dto.Description);
 
         await unitOfWork.SaveChangesAsync(cancellationToken);
 

@@ -7,4 +7,7 @@ public interface IProductionLineService
 {
     Task<IReadOnlyList<ProductionLineDTO>> GetAllAsync(CancellationToken cancellationToken);
     Task<Result<ProductionLineDTO>> GetByIdAsync(Guid id, CancellationToken cancellationToken);
+    Task<Result<Guid>> CreateAsync(CreateProductionLineDTO dto, CancellationToken cancellationToken);
+    Task<Result> UpdateAsync(UpdateProductionLineDTO dto, CancellationToken cancellationToken);
+    Task<Result> DeleteAsync(Guid id, CancellationToken cancellationToken);
 }
