@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/SharedKernel/SharedKernel.csproj" />
+    <Project Path="src/WebAPI/WebAPI.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/" />
+  <Folder Name="/src/modules/line-management/">
+    <Project Path="src/modules/line-management/LineManagement.API/LineManagement.API.csproj" />
+    <Project Path="src/modules/line-management/LineManagement.Application/LineManagement.Application.csproj" />
+    <Project Path="src/modules/line-management/LineManagement.Domain/LineManagement.Domain.csproj" />
+    <Project Path="src/modules/line-management/LineManagement.Persistence/LineManagement.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/traceability/">
+    <Project Path="src/modules/traceability/Traceability.Domain/Traceability.Domain.csproj" />
+  </Folder>
+  <Project Path="Manufacturing-Execution-System.AppHost/Manufacturing-Execution-System.AppHost.csproj" />
+  <Project Path="Manufacturing-Execution-System.ServiceDefaults/Manufacturing-Execution-System.ServiceDefaults.csproj" />
+</Solution>
