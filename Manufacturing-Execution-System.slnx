@@ -9,6 +9,7 @@
     <Project Path="src/WebAPI/WebAPI.csproj" />
   </Folder>
   <Folder Name="/src/modules/" />
+  <Folder Name="/src/modules/integration/" />
   <Folder Name="/src/modules/line-management/">
     <Project Path="src/modules/line-management/LineManagement.API/LineManagement.API.csproj" />
     <Project Path="src/modules/line-management/LineManagement.Application/LineManagement.Application.csproj" />
@@ -16,8 +17,12 @@
     <Project Path="src/modules/line-management/LineManagement.Persistence/LineManagement.Persistence.csproj" />
   </Folder>
   <Folder Name="/src/modules/traceability/">
+    <Project Path="src/modules/traceability/Traceability.API/Traceability.API.csproj" Id="1aaeeac8-43e9-46bd-a951-615c2c00617c" />
+    <Project Path="src/modules/traceability/Traceability.Application/Traceability.Application.csproj" Id="04de6a4d-8ad8-4835-a501-35898140834a" />
     <Project Path="src/modules/traceability/Traceability.Domain/Traceability.Domain.csproj" />
+    <Project Path="src/modules/traceability/Traceability.Persistence/Traceability.Persistence.csproj" Id="7c84ba83-7724-4ea2-9497-3ab3ad1bcbcd" />
   </Folder>
+  <Folder Name="/src/modules/work-orders/" />
   <Project Path="Manufacturing-Execution-System.AppHost/Manufacturing-Execution-System.AppHost.csproj" />
   <Project Path="Manufacturing-Execution-System.ServiceDefaults/Manufacturing-Execution-System.ServiceDefaults.csproj" />
 </Solution>

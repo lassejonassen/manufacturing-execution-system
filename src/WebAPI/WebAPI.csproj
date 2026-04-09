@@ -18,6 +18,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Manufacturing-Execution-System.ServiceDefaults\Manufacturing-Execution-System.ServiceDefaults.csproj" />
 		<ProjectReference Include="..\modules\line-management\LineManagement.API\LineManagement.API.csproj" />
+		<ProjectReference Include="..\modules\traceability\Traceability.API\Traceability.API.csproj" />
 		<ProjectReference Include="..\WebAPI.Contracts\WebAPI.Contracts.csproj" />
 	</ItemGroup>
 

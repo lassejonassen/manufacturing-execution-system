@@ -12,6 +12,10 @@ public static partial class ApplicationBuilderExtensions
             .GetRequiredService<LineManagement.Persistence.DbContexts.ApplicationDbContext>()
             .Database.Migrate();
 
+        scope.ServiceProvider
+            .GetRequiredService<Traceability.Persistence.DbContexts.ApplicationDbContext>()
+            .Database.Migrate();
+
         return app;
     }
 }
