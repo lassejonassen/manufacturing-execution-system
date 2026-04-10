@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SharedKernel.DomainEvents;
 
 namespace Traceability.Domain.ProductionRuns.Events;
 
-internal class ProductionStartedDomainEvent
+public sealed class ProductionStartedDomainEvent(Guid productionRunId) : DomainEvent
 {
+    public Guid ProductionRunId { get; } = productionRunId;
 }

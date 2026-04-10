@@ -1,13 +1,14 @@
-﻿using LineManagement.Domain.Equipments.Repositories;
-using LineManagement.Domain.ProductionLines.Repositories;
-using LineManagement.Persistence.Repositories;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SharedKernel;
 using SharedKernel.Persistence;
+using Traceability.Domain.ConsumedMaterials.Repositories;
+using Traceability.Domain.ProducedMaterials.Repositories;
+using Traceability.Domain.ProductionRuns.Repositories;
 using Traceability.Persistence.DbContexts;
+using Traceability.Persistence.Repositories;
 
 namespace Traceability.Persistence;
 
@@ -19,7 +20,7 @@ public static class DependencyInjection
 
         if (string.IsNullOrWhiteSpace(connectionString))
         {
-            throw new InvalidOperationException("Line Management Connection String is null or whitespace");
+            throw new InvalidOperationException("Traceability Connection String is null or whitespace");
         }
 
         services.AddSingleton<SetUpdatedAtInterceptor>();
@@ -41,8 +42,9 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
-        services.AddScoped<IProductionLineRepository, ProductionLineRepository>(); 
-        services.AddScoped<IEquipmentRepository, EquipmentRepository>(); 
+        services.AddScoped<IProductionRunRepository, ProductionRunRepository>(); 
+        services.AddScoped<IConsumedMaterialRepository, ConsumedMaterialRepository>(); 
+        services.AddScoped<IProducedMaterialRepository, ProducedMaterialRepository>();
 
         return services;
     }

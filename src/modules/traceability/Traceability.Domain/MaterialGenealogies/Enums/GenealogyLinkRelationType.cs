@@ -1,4 +1,4 @@
-﻿namespace Traceability.Domain.MaterialGenealogy.Enums;
+﻿namespace Traceability.Domain.MaterialGenealogies.Enums;
 
 public enum GenealogyLinkRelationType
 {

@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SharedKernel.DomainEvents;
 
 namespace Traceability.Domain.ProducedMaterials.Events;
 
-internal class MaterialProducedDomainEvent
+public sealed class MaterialProducedDomainEvent(DateTimeOffset timeStamp, Guid producedMaterialId, Guid productionRunId, string actor, string equipmentState) : DomainEvent
 {
+    public DateTimeOffset Timestamp { get; } = timeStamp;
+    public Guid ProducedMaterialId { get; } = producedMaterialId;
+    public Guid ProductionRunId { get; } = productionRunId;
+    public string Actor { get; } = actor; // User or System
+    public string EquipmentState { get; } = equipmentState; // Equipment State at SnapShot
 }
