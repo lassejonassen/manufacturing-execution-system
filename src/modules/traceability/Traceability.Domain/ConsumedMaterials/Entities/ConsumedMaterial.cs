@@ -1,7 +1,4 @@
 ﻿using SharedKernel;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Traceability.Domain.ConsumedMaterials.Enums;
 using Traceability.Domain.ConsumedMaterials.Errors;
 using Traceability.Domain.ConsumedMaterials.Events;

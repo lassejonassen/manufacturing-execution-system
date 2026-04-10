@@ -5,6 +5,7 @@ using WebAPI.Contracts.Traceability.ProductionRuns;
 
 namespace WebAPI.Controllers.Traceability;
 
+[Tags("Traceability - Production Runs")]
 [Route("api/traceability/production-runs")]
 public class ProductionRunsController(IProductionRunService productionRunService) : BaseController
 {

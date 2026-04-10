@@ -1,5 +1,4 @@
-﻿using Microsoft.Identity.Client;
-using SharedKernel;
+﻿using SharedKernel;
 using Traceability.Domain.MaterialGenealogies.Enums;
 using Traceability.Domain.MaterialGenealogies.Errors;
 using Traceability.Domain.ProductionRuns.Entities;

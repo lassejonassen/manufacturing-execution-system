@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using SharedKernel;
 using SharedKernel.Persistence;
 using Traceability.Domain.ConsumedMaterials.Repositories;
+using Traceability.Domain.MaterialGenealogies.Repositories;
 using Traceability.Domain.ProducedMaterials.Repositories;
 using Traceability.Domain.ProductionRuns.Repositories;
 using Traceability.Persistence.DbContexts;
@@ -45,6 +46,7 @@ public static class DependencyInjection
         services.AddScoped<IProductionRunRepository, ProductionRunRepository>(); 
         services.AddScoped<IConsumedMaterialRepository, ConsumedMaterialRepository>(); 
         services.AddScoped<IProducedMaterialRepository, ProducedMaterialRepository>();
+        services.AddScoped<IMaterialGenealogyRepository, MaterialGenealogyRepository>();
 
         return services;
     }

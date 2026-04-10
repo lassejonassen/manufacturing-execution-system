@@ -7,6 +7,9 @@ public static class MaterialGenealogyErrors
 {
     private const string Base = nameof(MaterialGenealogy);
 
+    public static readonly Error NotFound
+        = new($"{Base}.NotFound", "Material Genealogy not found", ErrorType.NotFound);
+
     public static readonly Error InvalidInputMaterialId
         = new($"{Base}.InvalidInputMaterialId", "The provided Input Material Id is invalid", ErrorType.Validation);
 

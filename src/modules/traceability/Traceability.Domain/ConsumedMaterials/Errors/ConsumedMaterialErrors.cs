@@ -7,6 +7,9 @@ public static class ConsumedMaterialErrors
 {
     private const string Base = nameof(ConsumedMaterial);
 
+    public static readonly Error NotFound
+        = new($"{Base}.NotFound", "Consumed Material not found", ErrorType.NotFound);
+
     public static readonly Error InvalidProductionRunId
         = new($"{Base}.InvalidProductionRunId", "The provided Production Run Id is invalid", ErrorType.Validation);
 

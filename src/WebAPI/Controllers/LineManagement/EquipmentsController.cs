@@ -5,6 +5,7 @@ using WebAPI.Contracts.LineManagement.Equipments;
 
 namespace WebAPI.Controllers.LineManagement;
 
+[Tags("Line Management - Equipments")]
 [Route("api/line-management/equipments")]
 public class EquipmentsController(IEquipmentService equipmentService) : BaseController
 {

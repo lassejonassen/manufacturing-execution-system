@@ -5,6 +5,7 @@ using WebAPI.Contracts.LineManagement.ProductionLines;
 
 namespace WebAPI.Controllers.LineManagement;
 
+[Tags("Line Management - Production Lines")]
 [Route("api/line-management/production-lines")]
 public class ProductionLinesController(IProductionLineService productionLineService) : BaseController
 {
