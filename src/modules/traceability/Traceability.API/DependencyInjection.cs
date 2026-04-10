@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Traceability.API.ProductionRuns;
 using Traceability.Application;
 using Traceability.Persistence;
 
@@ -10,6 +12,8 @@ public static class DependencyInjection
     {
         builder.Services.AddApplication();
         builder.Services.AddPersistence(builder.Configuration);
+
+        builder.Services.AddScoped<IProductionRunService, ProductionRunService>();
 
         return builder;
     }

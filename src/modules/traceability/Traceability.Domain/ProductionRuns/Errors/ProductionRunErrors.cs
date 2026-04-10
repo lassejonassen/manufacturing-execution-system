@@ -7,6 +7,9 @@ public static class ProductionRunErrors
 {
     private const string Base = nameof(ProductionRun);
 
+    public static readonly Error NotFound
+        = new($"{Base}.NotFound", "Production Run not found", ErrorType.NotFound);
+
     public static readonly Error InvalidWorkOrderId
         = new($"{Base}.InvalidWorkOrderId", "The provided Work Order Id is invalid", ErrorType.Validation);
 
@@ -20,5 +23,5 @@ public static class ProductionRunErrors
        = new($"{Base}.InvalidProductionLineId", "The provided Production Line Id is invalid", ErrorType.Validation);
 
     public static readonly Error InvalidEndTime
-   = new($"{Base}.InvalidEndTime", "The provided End Time is invalid", ErrorType.Validation);
+        = new($"{Base}.InvalidEndTime", "The provided End Time is invalid", ErrorType.Validation);
 }

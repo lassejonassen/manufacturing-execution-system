@@ -76,7 +76,7 @@ public sealed class ProductionRun : DomainEntity
         return Result.Success(productionRun);
     }
 
-    public Result Stop(DateTimeOffset endTimeUtc)
+    public Result Complete(DateTimeOffset endTimeUtc)
     {
         if (endTimeUtc < StartTimeUtc)
         {
@@ -84,6 +84,22 @@ public sealed class ProductionRun : DomainEntity
         }
 
         EndTimeUtc = endTimeUtc;
+        State = ProductionRunState.Completed;
+
+        Raise(new ProductionStoppedDomainEvent(Id));
+
+        return Result.Success();
+    }
+
+    public Result Abort(DateTimeOffset endTimeUtc)
+    {
+        if (endTimeUtc < StartTimeUtc)
+        {
+            return Result.Failure(ProductionRunErrors.InvalidEndTime);
+        }
+
+        EndTimeUtc = endTimeUtc;
+        State = ProductionRunState.Aborted;
 
         Raise(new ProductionStoppedDomainEvent(Id));
 
